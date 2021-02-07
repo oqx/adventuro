@@ -31,6 +31,7 @@ const _SelectLoader = (props) => {
    * @summary Fetch a select's options on initial render.
    */
   React.useEffect(() => {
+    // @ts-ignore
     API_MAP[props.name](paths).then((payload) => {
       setOptions(payload);
     });
@@ -47,6 +48,7 @@ const _SelectLoader = (props) => {
     )[0];
     setPrevParams(paths);
     if (REFETCH_MAP[props.name](difference)) {
+      // @ts-ignore
       API_MAP[props.name](paths).then((payload) => {
         setOptions(payload);
       });
@@ -58,7 +60,7 @@ const _SelectLoader = (props) => {
    */
   if (!options) {
     return (
-    // @ts-ignore
+      // @ts-ignore
       <Select
         value=""
         placeholder="Loading..."
