@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
+import * as fromContainers from './Containers'
+import Logo from './bus.svg'
+import './App.scss';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Router>
+      <header className="app__header">
+        <img alt="logo" src={Logo} className="app__logo"/>
+        <h1 className="app__title app__title--sm gradient">adventuro</h1>
       </header>
-    </div>
+      <div className="app__content">
+        <main className="app__main">
+          <fromContainers.Form />
+        </main>
+        <div className="app__hero">
+          <Route path="/:route/:direction"><fromContainers.Trip /></Route>
+          <h1 className="app__title gradient">*beep beep*</h1>
+        </div>
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,72 @@
+.trip {
+  background: #333;
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  
+  @media(min-width: 960px) {
+    border-radius: 4px;
+    border: 1px solid #f092df;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translatey(-50%) translatex(-50%);
+    overflow: auto;
+    height: 500px;
+    width: 80%;  
+  }
+
+  &::after {
+    background-image: url(../../pattern.png);
+    content: "";
+    position: absolute;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: 500px;
+    z-index: -1;
+  }
+
+  &__no-departs {
+      height: 200px;
+      border: 2px dashed #f092df;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Londrina Outline", cursive;
+      font-size: 2rem;
+      color: #f092df;
+  }
+
+  &__desc {
+    font-family: "Londrina Outline", cursive;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &__card {
+    background: #3c3c3c99;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.trip-enter {
+  transform: translatey(-50%) translatex(100%);
+  transition: 0.2s linear;
+}
+.trip-enter-active {
+  transform: translatey(-50%) translatex(-50%);
+}
+.trip-exit {
+  transform: translatey(-50%) translatex(-50%);
+  transition: 0.3s linear;
+}
+.trip-exit-active {
+  transform: translatey(-50%) translatex(100%);
+}

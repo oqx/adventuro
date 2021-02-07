@@ -1,0 +1,27 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+
+  &__title {
+    font-family: 'Londrina Outline', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}
+
+.control-enter {
+  transform: translateX(-100%);
+  transition: 0.2s linear;
+}
+.control-enter-active {
+  transform: translateX(0%);
+}
+.control-exit {
+  transform: translateX(0%);
+  transition: 0.3s linear;
+}
+.control-exit-active {
+  transform: translateX(-100%);
+}
